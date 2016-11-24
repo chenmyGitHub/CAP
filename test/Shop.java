@@ -31,7 +31,6 @@ import javax.xml.bind.annotation.XmlType;
 		"orders" })
 @XmlRootElement(name = "Market")
 public class Shop {
-
 	/**
 	 * xx
 	 */
