@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="登陆退出action代码走查-20151010">
+  <ReviewIssue id="IFKOVM4D">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:16:38:077 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:17:00:357 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File line="106">src/main/java/com/comtop/cap/ptc/login/action/CapLoginAction.java</File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>判断验证码？是什么意思！</Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFKOXTH3">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:18:20:919 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:18:52:143 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File line="106">src/main/java/com/comtop/cap/ptc/login/action/CapLoginAction.java</File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>清晰化处理逻辑 ，先做验证成功，else失败</Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFKOYVJ0">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:19:10:236 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:20:12:330 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File line="97">src/main/java/com/comtop/cap/ptc/login/action/CapLoginAction.java</File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>关键方法需写清椘注释，包括方法功能说明、处理规则，如何关联登录top帐号</Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFKP0I59">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:20:26:205 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:20:45:984 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>注释…………</Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFKP3JWX">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:22:48:465 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:23:22:819 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>要注意方法必须得有注释</Summary>
+    <Description>要注意方法必须得有注释</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFKP92P4">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:27:06:088 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:27:33:313 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>写清楚常量具体作用</Summary>
+    <Description></Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFKPALST">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:28:17:501 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-10 :: 14:32:07:913 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小强</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File line="238">src/main/java/com/comtop/cap/ptc/login/action/CapLoginAction.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>建议将存、取session都统一放在工具类中处理，方便修改（方法名要修改一下，不能叫save……）</Summary>
+    <Description>建议将存、取session都统一放在工具类中处理，方便修改（方法名要修改一下，不能叫save……）CapLoginUtil中添加一个setCapCurrentUserSession、get……、remove……</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>

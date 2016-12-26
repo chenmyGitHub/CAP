@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="团队、人员管理模块前端代码走查-20151012">
+  <ReviewIssue id="IFQF8O6H">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-14 :: 14:33:28:169 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-14 :: 14:34:34:788 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小芬</ReviewerId>
+    <AssignedTo>姜子豪</AssignedTo>
+    <File></File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>继承类不正确。不需要重载initBussinessAttr，initVerifyAttr方法。</Summary>
+    <Description>继承类不正确。不需要重载initBussinessAttr，initVerifyAttr方法。</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFQFDD4X">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-14 :: 14:37:07:137 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-14 :: 14:37:40:736 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小芬</ReviewerId>
+    <AssignedTo>姜子豪</AssignedTo>
+    <File></File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>没使用springmvc，注解建议去掉</Summary>
+    <Description>没使用springmvc，注解建议去掉</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFQFEC1R">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-14 :: 14:37:52:383 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-14 :: 14:38:35:717 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小芬</ReviewerId>
+    <AssignedTo>姜子豪</AssignedTo>
+    <File></File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>teamaction和roleaction与employeeaction问题相同。</Summary>
+    <Description>teamaction和roleaction与employeeaction问题相同。</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>

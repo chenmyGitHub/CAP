@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="团队、人员管理模块前端代码走查-20151012">
+  <ReviewIssue id="IJJQEWAR">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2016-01-18 :: 16:50:40:515 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2016-01-18 :: 16:51:37:630 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>丁庞</ReviewerId>
+    <AssignedTo>姜子豪</AssignedTo>
+    <File line="110">src/main/java/com/comtop/cap/ptc/team/action/CapAppAction.java</File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>1为魔法数字，请用常量备注</Summary>
+    <Description>1为魔法数字，请用常量备注</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>

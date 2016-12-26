@@ -1,0 +1,15 @@
+//archivesBaseName ='comtop-cap-cip-codegen'
+dependencies {
+	compile project(':cap-codegen')
+	compile project(':cap-graph')
+	
+	compile 'org.apache.commons:commons-compress:1.9'
+	//cap引入第三方包
+	compile 'com.mxgraph:mxgraph-all:1.10.3'
+	compile 'com.mxgraph:mxgraph-core:1.10.3'
+	compile 'com.mxgraph:mxgraph-swing:1.10.3'
+}
+
+javadoc{
+
+}

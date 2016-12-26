@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="登陆退出action代码走查-20151010">
+  <ReviewIssue id="IFOOMGK7">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-13 :: 09:20:35:671 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-13 :: 09:20:57:401 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小芬</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>注释不正确</Summary>
+    <Description>loginPictureFacade的注释不正确</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="IFOOS2RW">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-13 :: 09:24:57:740 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-10-13 :: 09:25:50:312 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>李小芬</ReviewerId>
+    <AssignedTo>丁庞</AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>注释和变量名不满足编码规范</Summary>
+    <Description>方法注释和PersonnelVO变量名不满足编码规范</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>
