@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Review id="common宸ョ▼浠ュ强runtime宸ョ▼浠ｇ爜">
+  <ReviewIssue id="HTAXTEAL">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-03-28 :: 11:55:38:013 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-03-28 :: 11:58:49:669 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>鍐睍</ReviewerId>
+    <AssignedTo>镆隳绂?/AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>镊姩镓弿褰揿墠搴旗敤涓殑SQL鏂囦欢阃昏緫鍙互杩涜浼桦寲</Summary>
+    <Description>镊姩镓弿褰揿墠搴旗敤涓殑SQL鏂囦欢阃昏緫鍙互杩涜浼桦寲</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.resolution.label.validNeedsfixing</Resolution>
+    <Status>item.status.label.closed</Status>
+  </ReviewIssue>
+  <ReviewIssue id="HTAXVLO8">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-03-28 :: 11:57:20:888 CST</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2014-03-28 :: 11:58:45:310 CST</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>鍐睍</ReviewerId>
+    <AssignedTo>镆隳绂?/AssignedTo>
+    <File></File>
+    <Type>item.type.label.codingStandards</Type>
+    <Severity>item.severity.label.trivial</Severity>
+    <Summary>COMMON宸ョ▼鏄熀纭€浠ｇ爜锛屽浜庡叾涓殑鍙橀噺锻藉悕闇€瑕佺鍚埚叕鍙歌锣?/Summary>
+    <Description>COMMON宸ョ▼鏄熀纭€浠ｇ爜锛屽浜庡叾涓殑鍙橀噺锻藉悕闇€瑕佺鍚埚叕鍙歌锣?/Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.resolution.label.validNeedsfixing</Resolution>
+    <Status>item.status.label.closed</Status>
+  </ReviewIssue>
+</Review>

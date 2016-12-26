@@ -1,0 +1,56 @@
+{
+	"avBar":[{
+		"barAge":1020775935,
+		"barDate":"2014-02-17 17:30:55",
+		"barName":"sss_0.5595958"
+	},{
+		"barAge":-1974116886,
+		"barDate":"2014-02-17 17:30:55",
+		"barName":"sss_0.18443501"
+	}],
+	"avString":["aaa","bbb","ccc"],
+	"avboolean":[true,false,true,true],
+	"avint":[1,2,3,4],
+	"bar":{
+		"barAge":1943913160,
+		"barDate":"2014-02-17 17:30:55",
+		"barName":"sss_0.49188656"
+	},
+	"dddd":"2014-02-17 17:30:55",
+	"listBar":[
+		{
+			"barAge":-1787192510,
+			"barDate":"2014-02-17 17:30:55",
+			"barName":"sss_0.69199216"
+		},
+		{
+			"barAge":1481328536,
+			"barDate":"2014-02-17 17:30:55",
+			"barName":"sss_0.6358857"
+		},
+		{
+			"barAge":-837627150,
+			"barDate":"2014-02-17 17:30:55",
+			"barName":"sss_0.36370552"
+		}
+	],
+	"listString":[
+		"listString1",
+		"listString2",
+		"listString3"
+	],
+	"map":{
+		"x":"s11111x",
+		"y":"s22222y",
+		"z":"s33333z"
+	},
+	"v_Date":"2014-02-17 17:30:55",
+	"vboolean":false,
+	"vbyte":64,
+	"vchar":"x",
+	"vdouble":22.203,
+	"vfloat":12.1,
+	"vint":65535,
+	"vlong":9999999,
+	"vshort":128
+}
