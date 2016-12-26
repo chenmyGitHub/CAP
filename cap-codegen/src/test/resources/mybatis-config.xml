@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration  
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<property name="dialect" value="MySQL"/>
+	</properties>
+	
+	<plugins>
+		<plugin interceptor="com.comtop.corm.extend.plugin.StatementInterceptor">
+		</plugin>
+		
+	</plugins>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@10.10.5.223:1521:ORCL" />
+				<property name="username" value="cap_develop" />
+				<property name="password" value="cap_develop" />
+				<property name="driver.useUnicode" value="true" />
+				<property name="driver.characterEncoding" value="gbk" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/comtop/cip/metadata/entity/model/EntityVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/MethodVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/EntityAttributeVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/EntityRelationshipVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/EntityValueObjectVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/table/model/DataTableVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/table/model/TableFieldVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/BizDataTypeVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/DictionaryVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/pkg/model/PackageVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/common/model/DirectoryVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/ConstraintVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/ParameterVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/table/model/TableIndexVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/table/model/TableFieldIndexRelationVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/MethodCascadeVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/entity/model/ExceptionVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/pkg/model/ProjectJarVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/pkg/model/ProjectVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/query/model/FromVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/query/model/OrderVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/query/model/QuerySQLVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/query/model/QueryVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/query/model/SelectVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/query/model/WhereVOSQL.xml" />
+		<mapper resource="com/comtop/cip/metadata/common/model/MetadataVersionVOSQL.xml" />
+		<mapper scan="classpath*:*SQL.xml"/>
+	</mappers>
+</configuration>  

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generators>
+ 	<!-- id：生成器配置的唯一标识符，用于区分不同的配置，  name：代码生成器配置名称，方便界面显示；wrapper：数据包装类，将所需数据封装到Map中，方便模板填充; default：是否当前默认生成方式；ftlPath:模板在当前类路径下的相对目录；-->
+	<generator id="cap_inte" name="CAP新版代码生成器" wrapper="com.comtop.cap.codegen.generate.DefaultWrapper" default="true" ftlPath="/inte" parent="cap">
+		<layer id="abs_facade" name="facade.abs" sourceType="java"  sourceNamePattern="Abstract{0}Facade.java" ftlName="capAbstractFacade.ftl"/>
+		<layer id="appservice" name="appservice" sourceType="java"  sourceNamePattern="{0}AppService.java" ftlName="capExtAppService.ftl"  rewritable="false"/>
+		<layer id="newAction" name="action" sourceType="java" sourceNamePattern="abs/Abstract{0}Action.java,{0}Action.java" ftlName="newabstractaction.ftl,newaction.ftl"  rewritable="true,false" processClass="com.comtop.cap.codegen.generate.NewActionProcess" layerWrapper="com.comtop.cap.codegen.model.WrapperJoddNewAction"/>
+	</generator>
+	
+	<generator id="cap_spring" name="CAP_Spring代码生成器" wrapper="com.comtop.cap.codegen.generate.DefaultWrapper" default="false" ftlPath="/springmvc" parent="cap">
+		<layer id="abs_facade" name="facade.abs" sourceType="java"  sourceNamePattern="Abstract{0}Facade.java" ftlName="capAbstractFacade.ftl"/>
+		<layer id="appservice" name="appservice" sourceType="java"  sourceNamePattern="{0}AppService.java" ftlName="capExtAppService.ftl"  rewritable="false"/>
+		<layer id="newAbstractAction" name="action" sourceType="java" sourceNamePattern="abs/Abstract{0}Action.java" ftlName="springmvc_newabstractaction.ftl"  processClass="com.comtop.cap.codegen.generate.NewActionProcess" layerWrapper="com.comtop.cap.codegen.model.WrapperSpringNewAction"/>
+		<layer id="newAction" name="action" sourceType="java" sourceNamePattern="{0}Action.java" ftlName="springmvc_newaction.ftl"  processClass="com.comtop.cap.codegen.generate.NewActionProcess" rewritable="false" layerWrapper="com.comtop.cap.codegen.model.WrapperSpringNewAction"/>
+	</generator>
+	
+	<generator id="cap" name="CAP公共代码模板" ftlPath="/common" wrapper="com.comtop.cap.codegen.generate.DefaultWrapper" ftlRoot="/com/comtop/cap/codegen">
+		<layer id="facade" name="facade" sourceType="java"  sourceNamePattern="{0}Facade.java" ftlName="capExtFacade.ftl"  rewritable="false"/>
+		<layer id="abs_appservice" name="appservice.abs" sourceType="java" sourceNamePattern="Abstract{0}AppService.java" ftlName="capAbstractAppService.ftl"/>
+		<layer id="abs_servicefacade" name="facade.abs" sourceType="java"  sourceNamePattern="Abstract{0}Facade.java" ftlName="capAbstractServiceFacade.ftl" layerWrapper="com.comtop.cap.codegen.model.WrapperServiceFacace"/>
+		<layer id="servicefacade" name="facade" sourceType="java"  sourceNamePattern="{0}Facade.java" ftlName="capExtServiceFacade.ftl"  rewritable="false" layerWrapper="com.comtop.cap.codegen.model.WrapperServiceFacace"/>
+		<layer id="vo" name="model" sourceType="java" sourceNamePattern="{0}VO.java" ftlName="capVO.ftl"/>
+		<layer id="base_sql" name="dbconfig" sourceType="resource"  sourceNamePattern="{0}BaseSQL.xml" ftlName="capBaseSQL.ftl"/>
+		<layer id="ext_sql" name="dbconfig" sourceType="resource"  sourceNamePattern="{0}SQL.xml" ftlName="capExtSQL.ftl" rewritable="false"/>
+		<layer id="exception" name="exception" sourceType="java"  sourceNamePattern="{0}.java" ftlName="capException.ftl" layerWrapper="com.comtop.cap.codegen.model.WrapperGenerateExeption"/>
+		<layer id="jsp" name="newPages" sourceType="web" sourceNamePattern="{0}.jsp" ftlName="newpage.ftl" processClass="com.comtop.cap.codegen.generate.NewPageProcess" layerWrapper="com.comtop.cap.codegen.model.WrapperNewPage"/>
+		<layer id="prototype_html" name="prototypePages" sourceType="web" sourceNamePattern="{0}.html" ftlName="prototypeHTML.ftl"  processClass="com.comtop.cap.codegen.generate.PrototypeHTMLProcess" layerWrapper="com.comtop.cap.codegen.model.WrapperPrototypeHTML"/>
+	</generator>
+	
+	<generator id="cip_page" name="页面建模测试" wrapper="com.comtop.cap.codegen.generate.DefaultWrapper" default="false" ftlPath="/com/comtop/cip/codegen/test" >
+		<layer id="jsp" name="newPages" sourceType="web" sourceNamePattern="{0}.jsp" ftlName="newpage.ftl"  processClass="com.comtop.cap.codegen.generate.NewPageProcess"/>
+		<layer id="newAction" name="newPages" sourceType="java" sourceNamePattern="action/abs/Abstract{0}Action.java,action/{0}Action.java" ftlName="newabstractaction.ftl,newaction.ftl"  processClass="com.comtop.cap.codegen.generate.NewActionProcess"/>
+	</generator>
+	
+	<compile id="cap_compile_spring" ref-generator="cap_spring">
+		<sort ref-layerId="exception" sortNo="1"></sort>
+		<sort ref-layerId="vo" sortNo="2"></sort>
+		<sort ref-layerId="base_sql" sortNo="3"></sort>
+		<sort ref-layerId="ext_sql" sortNo="4"></sort>
+		<sort ref-layerId="abs_appservice" sortNo="5"></sort>
+		<sort ref-layerId="appservice" sortNo="6"></sort>
+		<sort ref-layerId="abs_facade" sortNo="7"></sort>
+		<sort ref-layerId="facade" sortNo="8"></sort>
+		<sort ref-layerId="abs_servicefacade" sortNo="9"></sort>
+		<sort ref-layerId="servicefacade" sortNo="10"></sort>
+		<sort ref-layerId="newAbstractAction" sortNo="11"></sort>
+		<sort ref-layerId="newAction" sortNo="12"></sort>
+		<sort ref-layerId="prototype_html" sortNo="13"></sort>
+	</compile>
+	
+	<compile id="cap_compile_inte" ref-generator="cap_inte">
+		<sort ref-layerId="exception" sortNo="1"></sort>
+		<sort ref-layerId="vo" sortNo="2"></sort>
+		<sort ref-layerId="base_sql" sortNo="3"></sort>
+		<sort ref-layerId="ext_sql" sortNo="4"></sort>
+		<sort ref-layerId="abs_appservice" sortNo="5"></sort>
+		<sort ref-layerId="appservice" sortNo="6"></sort>
+		<sort ref-layerId="abs_facade" sortNo="7"></sort>
+		<sort ref-layerId="facade" sortNo="8"></sort>
+		<sort ref-layerId="abs_servicefacade" sortNo="9"></sort>
+		<sort ref-layerId="servicefacade" sortNo="10"></sort>
+		<sort ref-layerId="newAction" sortNo="11"></sort>
+		<sort ref-layerId="prototype_html" sortNo="12"></sort>
+	</compile>
+</generators>

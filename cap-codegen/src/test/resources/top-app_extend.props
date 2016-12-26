@@ -1,0 +1,22 @@
+#指定数据源实现类，配合@profiles=datasource使用；未配置@profiles属性时，默认使用该数据源实现类
+#jodd.cfg.datasource= com.comtop.top.core.jodd.JNDIDefaultDataSource
+#JNDI数据源名称，配合@profiles=jndi使用
+dbpool.jndiName=CTDataSource
+
+#jdbc数据源，配合@profiles=jdbc使用
+#[dbpool<jdbc>]
+#driver=oracle.jdbc.driver.OracleDriver
+#url=jdbc:oracle:thin:@10.10.5.223:1521:ORCL
+#user=cap_develop
+#password=cap_develop
+#maxConnections=50
+#minConnections=5
+#waitIfBusy=true
+#[]
+#属性类型指定目前包括：jndi、jdbc、datasource
+@profiles=jndi
+
+#SQL配置文件
+corm.configFile=top-sql-config.xml
+#登陆成功后的自定义跳转接口服务,实现：com.comtop.top.sys.login.appservice.ICustomPage
+#login.customFunctionPage=com.comtop.top.sys.login.appservice.DefaultPage

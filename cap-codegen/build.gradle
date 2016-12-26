@@ -1,0 +1,23 @@
+//archivesBaseName ='comtop-cap-cip-codegen'
+	
+dependencies {
+	
+	compile project(':cap-metadata')
+	compile project(':cap-common')
+	
+	//top发布包
+	compile 'com.comtop.cap.runtime.top:comtop-top-module-classify:' + topModuleClassifyVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-access:' + topAccessVersion
+
+	//soa重写第三方jar
+	compile 'com.comtop.soa:comtop-soa-integration:2.1.6'
+	compile 'com.comtop.soa:comtop-soa-ws:2.1.6'
+	compile 'com.comtop.cap.runtime.soa:comtop-soa-core:' + soaReleaseVersion
+	
+	//cap引入第三方jar
+	compile 'org.freemarker:freemarker:2.3.20'
+}
+
+javadoc{
+
+}
