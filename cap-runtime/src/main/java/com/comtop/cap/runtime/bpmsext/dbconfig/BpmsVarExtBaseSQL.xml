@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.comtop.cap.runtime.bpmsext.model">
+
+	
+	<generateOperate class="com.comtop.cap.runtime.bpmsext.model.BpmsVarExtVO"></generateOperate>
+	
+	
+	<sql id = "bpmsVarExt_cascade_query_condition" >
+	 <if test = "variableId != null and variableId!= '' "> 
+		  AND (T1.VARIABLE_ID =  #{variableId} )  
+ 	 </if>
+	 <if test = "mainProcessInsId != null and mainProcessInsId!= '' "> 
+		  AND (T1.MAIN_PROCESS_INS_ID =  #{mainProcessInsId} )  
+ 	 </if>
+	 <if test = "variableKey != null and variableKey!= '' "> 
+		  AND (T1.VARIABLE_KEY =  #{variableKey} )  
+ 	 </if>
+	 <if test = "variableValue != null and variableValue!= '' "> 
+		  AND (T1.VARIABLE_VALUE =  #{variableValue} )  
+ 	 </if>
+	 <if test = "variableType != null and variableType!= '' "> 
+		  AND (T1.VARIABLE_TYPE =  #{variableType} )  
+ 	 </if>
+	 <if test = "createTime != null"> 
+		  AND (T1.CREATE_TIME =  #{createTime} )  
+ 	 </if>
+	 <if test = "curNodeInsId != null and curNodeInsId!= '' "> 
+		  AND (T1.CUR_NODE_INS_ID =  #{curNodeInsId} )  
+ 	 </if>
+ 	 <if test = "curNodeId != null and curNodeId!= '' "> 
+		  AND (T1.CUR_NODE_ID =  #{curNodeId} )  
+ 	 </if>
+	 <if test = "modifyDate != null"> 
+		  AND (T1.MODIFY_DATE =  #{modifyDate} )  
+ 	 </if>
+	 <if test = "mainProcessId != null and mainProcessId!= '' "> 
+		  AND (T1.MAIN_PROCESS_ID =  #{mainProcessId} )  
+ 	 </if>
+	</sql>
+	
+	<sql id = "bpmsVarExt_default_query_condition" >
+	 <if test = "variableId != null and variableId!= '' "> 
+		  AND (T1.VARIABLE_ID =  #{variableId})  
+ 	 </if>
+	 <if test = "mainProcessInsId != null and mainProcessInsId!= '' "> 
+		  AND (T1.MAIN_PROCESS_INS_ID =  #{mainProcessInsId})  
+ 	 </if>
+	 <if test = "variableKey != null and variableKey!= '' "> 
+		  AND (T1.VARIABLE_KEY =  #{variableKey})  
+ 	 </if>
+	 <if test = "variableValue != null and variableValue!= '' "> 
+		  AND (T1.VARIABLE_VALUE =  #{variableValue})  
+ 	 </if>
+	 <if test = "variableType != null and variableType!= '' "> 
+		  AND (T1.VARIABLE_TYPE =  #{variableType})  
+ 	 </if>
+	 <if test = "createTime != null"> 
+		  AND (T1.CREATE_TIME =  #{createTime})  
+ 	 </if>
+	 <if test = "curNodeInsId != null and curNodeInsId!= '' "> 
+		  AND (T1.CUR_NODE_INS_ID =  #{curNodeInsId})  
+ 	 </if>
+ 	 <if test = "curNodeId != null and curNodeId!= '' "> 
+		  AND (T1.CUR_NODE_ID =  #{curNodeId} )  
+ 	 </if>
+	 <if test = "modifyDate != null"> 
+		  AND (T1.MODIFY_DATE =  #{modifyDate})  
+ 	 </if>
+	 <if test = "mainProcessId != null and mainProcessId!= '' "> 
+		  AND (T1.MAIN_PROCESS_ID =  #{mainProcessId})  
+ 	 </if>
+	</sql>
+	
+	<select id="queryBpmsVarExtListByCondition" parameterType="com.comtop.cap.runtime.bpmsext.model.BpmsVarExtVO" resultType="com.comtop.cap.runtime.bpmsext.model.BpmsVarExtVO">
+		SELECT T1.* FROM CAP_RT_BPMS_VAR_EXT T1
+		<where> 
+			 <include refid="bpmsVarExt_cascade_query_condition" />
+		</where>
+	</select>
+	
+	<select id="queryBpmsVarExtList" parameterType="com.comtop.cap.runtime.bpmsext.model.BpmsVarExtVO" resultType="com.comtop.cap.runtime.bpmsext.model.BpmsVarExtVO">
+		SELECT T1.* FROM CAP_RT_BPMS_VAR_EXT T1
+		<where> 
+			 <include refid="bpmsVarExt_default_query_condition" />
+		</where>
+		<if test="sortFieldName != null and sortFieldName != '' and sortType != null and sortType != ''">
+			ORDER BY T1.${sortFieldName} ${sortType}
+		</if>
+	</select>
+	
+	<select id="queryBpmsVarExtCount" parameterType="com.comtop.cap.runtime.bpmsext.model.BpmsVarExtVO" resultType="int">
+			SELECT COUNT(1) FROM CAP_RT_BPMS_VAR_EXT T1
+		<where> 
+			 <include refid="bpmsVarExt_default_query_condition" />
+		</where>
+	</select>
+	
+	<delete id="deleteBpmsVarByNodeId" parameterType="java.util.Map">
+		DELETE FROM CAP_RT_BPMS_VAR_EXT 
+		WHERE MAIN_PROCESS_INS_ID = #{processInsId} AND CUR_NODE_ID =  #{nodeId}
+	</delete>
+</mapper>

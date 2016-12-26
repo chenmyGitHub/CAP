@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+    
+<mapper namespace="workFlow">
+	<!-- 查询用户参与的待办节点 -->
+	<select id="queryTodoTransNode" parameterType="map" resultType="com.comtop.bpms.common.model.NodeInfo">
+		SELECT DISTINCT T.CUR_NODE_ID NODEID, T.CUR_NODE_NAME NODENAME
+		FROM   BPMS_RU_TODO_TASK T
+		WHERE  T.MAIN_PROCESS_ID = #{mainProcessId}
+		       AND T.TRANS_ACTOR_ID = #{transActorId}
+	</select>
+	<!-- 查询用户参与的已办节点 -->
+	<select id="queryDoneTransNode" parameterType="map" resultType="com.comtop.bpms.common.model.NodeInfo">
+		SELECT DISTINCT T.CUR_NODE_ID NODEID, T.CUR_NODE_NAME NODENAME
+		FROM   BPMS_RU_DONE_TASK T
+		WHERE  T.MAIN_PROCESS_ID = #{mainProcessId}
+		       AND T.TRANS_ACTOR_ID = #{transActorId}
+	</select>
+</mapper>

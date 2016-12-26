@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.comtop.cip.runtime.demo.company.model">
+	<select id="loadCopmany" parameterType="integer" resultType="com.comtop.cip.runtime.demo.company.model.Company">
+		SELECT * FROM company where id = #{id}
+	</select>
+
+	<select id="loadCompany_Address"  resultType="com.comtop.cip.runtime.demo.company.demo.Address">
+		SELECT * FROM address where company_id = #{id}
+	</select>
+	
+	<select id="loadCompany_Staffs"  resultType="com.comtop.cip.runtime.demo.company.demo.Staff">
+		SELECT * FROM staff where staff_id = #{id}
+	</select>
+	
+	<generateOperate class="com.comtop.cip.runtime.demo.company.demo.Company"></generateOperate>
+</mapper>

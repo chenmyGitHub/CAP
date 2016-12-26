@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.comtop.cap.runtime.opinion.model">
+
+	
+	<generateOperate class="com.comtop.cap.runtime.opinion.model.CommonOpinionVO"></generateOperate>
+	
+	<select id="queryOpinionListByPerson" parameterType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO" resultType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO">
+		SELECT T1.* FROM CAP_RT_COMMON_OPINION T1
+		<if test = "personId != null and personId!= '' and personId!= 'null' "> 
+		  WHERE (T1.PERSON_ID =  #{personId})  
+ 	    </if>
+	</select>
+	
+	<select id="queryOpinionCountByPerson" parameterType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO" resultType="int">
+			SELECT COUNT(1) FROM CAP_RT_COMMON_OPINION T1
+			<if test = "personId != null and personId!= '' and personId!= 'null' "> 
+			  WHERE (T1.PERSON_ID =  #{personId})  
+	 	    </if>
+	</select>
+	
+	<select id="queryOpinionListByCondition" parameterType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO" resultType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO">
+		SELECT T1.* FROM CAP_RT_COMMON_OPINION T1
+		<where> 
+			 <include refid="opinion_cascade_query_condition" />
+		</where>
+	</select>
+	
+	<select id="queryOpinionList" parameterType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO" resultType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO">
+		SELECT T1.* FROM CAP_RT_COMMON_OPINION T1
+		<where> 
+			 <include refid="opinion_default_query_condition" />
+		</where>
+		<if test="sortFieldName != null and sortFieldName != '' and sortType != null and sortType != ''">
+			ORDER BY T1.${sortFieldName} ${sortType}
+		</if>
+	</select>
+	
+	<select id="queryOpinionCount" parameterType="com.comtop.cap.runtime.opinion.model.CommonOpinionVO" resultType="int">
+			SELECT COUNT(1) FROM CAP_RT_COMMON_OPINION T1
+		<where> 
+			 <include refid="opinion_default_query_condition" />
+		</where>
+	</select>
+	
+	<sql id = "opinion_cascade_query_condition" >
+	 <if test = "id != null and id!= '' "> 
+		  AND (T1.ID =  #{id} )  
+ 	 </if>
+	 <if test = "personId != null and personId!= '' "> 
+		  AND (T1.PERSON_ID =  #{personId} )  
+ 	 </if>
+	 <if test = "opinion != null and opinion!= '' "> 
+		  AND (T1.OPINION =  #{opinion} )  
+ 	 </if>
+	 <if test = "isglobalctrl != null"> 
+		  AND (T1.ISGLOBALCTRL =  #{isglobalctrl} )  
+ 	 </if>
+	 <if test = "workId != null and workId!= '' "> 
+		  AND (T1.WORK_ID =  #{workId} )  
+ 	 </if>
+	</sql>
+	
+	<sql id = "opinion_default_query_condition" >
+	 
+	 <if test = "personId != null and personId!= '' and personId!= 'null' "> 
+		  AND (T1.PERSON_ID =  #{personId})  
+ 	 </if>
+	 <if test = "opinion != null and opinion!= '' "> 
+		  AND (T1.OPINION =  #{opinion})  
+ 	 </if>
+	
+	</sql>
+	
+</mapper>

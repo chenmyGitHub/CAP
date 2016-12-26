@@ -1,0 +1,80 @@
+//archivesBaseName =''
+dependencies{
+	//compile project(':cap-common')
+	
+	compile 'com.comtop.cip:comtop-cip-json:1.1'
+	compile 'com.comtop.cip:comtop-cip-validator:2.2'
+	compile 'com.comtop.cip:comtop-cip-script:1.0'
+	compile 'org.slf4j:slf4j-api:1.7.5'
+	compile 'com.comtop.cap.jodd:comtop-cip-jodd:1.4'
+    //cap引入第三方包
+	compile 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'
+	compile 'javax.transaction:jta:1.1'
+	compile 'net.sf.ehcache:ehcache:1.6.2'
+	compile 'javax.servlet:servlet-api:2.0'
+	
+	//compile 'org.freemarker:freemarker:2.3.20'
+	
+	compile 'de.odysseus.juel:juel-api:2.2.4'
+	compile 'de.odysseus.juel:juel-impl:2.2.4'
+	
+	//bpms发布包
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-engine-cctask:' + bpmsEngineCctaskVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-engine-client:' + bpmsEngineClientVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-engine-client4monitor:' + bpmsReleaseVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-engine-common:' + bpmsEngineCommonVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-engine-service:' + bpmsEngineServiceVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-util-eim-send-msg:' + bpmsEimMsgVersion
+	//compile 'com.comtop.cap.runtime.bpms:comtop-intergrationfassets-util:' + bpmsIntergrationfassetsUtilVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-logger:' + bpmsReleaseVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-monitor:' + bpmsReleaseVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-serviceinvoke:' + bpmsReleaseVersion
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-tbi-impl:' + bpmsTbiImplVersion	
+	compile 'com.comtop.cap.runtime.bpms:comtop-bpms-top5impl:' + bpmsReleaseVersion
+	
+	//bpms引入第三方jar
+	compile 'org.springframework:spring-web:3.2.0.RELEASE'
+	compile 'org.springframework:spring-context:3.2.0.RELEASE'
+	compile 'org.springframework:spring-beans:3.2.0.RELEASE'
+	compile 'org.springframework:spring-core:3.2.0.RELEASE'
+	compile 'org.springframework:spring-expression:3.2.0.RELEASE'
+	compile 'org.springframework:spring-jdbc:3.2.0.RELEASE'
+	compile 'org.springframework:spring-tx:3.2.0.RELEASE'
+	compile 'org.springframework:spring-orm:3.2.0.RELEASE'
+	compile 'aopalliance:aopalliance:1.0'
+	compile 'org.aspectj:aspectjweaver:1.7.1'
+	compile 'commons-logging:commons-logging:1.1.1'
+	
+	//top发布包
+	compile 'com.comtop.cap.runtime.top:comtop-top-core:' + topCoreVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-common:' + topCommonVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-component:' + topComponentVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-user-org:' + topUserOrgVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-access:' + topAccessVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-workbench:' + topWorkbenchVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-cfg:' + topCfgVersion	
+	compile 'com.comtop.cap.runtime.top:comtop-top-module-classify:' + topModuleClassifyVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-login:' + topLoginVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-oct:' + topOctVersion
+	compile 'com.comtop.cap.runtime.top:comtop-top-login-tass:1.0.0'
+	compile 'com.comtop.cap.runtime.top:comtop-top-gd4a:5.0'
+	
+	//top重写第三方jar
+	compile 'com.comtop.top:comtop-top-dwr:3'
+	compile 'com.comtop.top:comtop-top-corm:3.1.2'
+	//mc发布包
+	compile 'com.comtop.cap.runtime.mc:comtop-core-mc-1.0.2:' + mcReleaseVersion
+	
+	//top引入第三方包
+	compile 'commons-lang:commons-lang:2.6'
+	
+	//soa重写第三方jar
+	compile 'com.comtop.soa:comtop-soa-integration:2.1.6'
+	compile 'com.comtop.soa:comtop-soa-ws:2.1.6'
+	compile 'com.comtop.cap.runtime.soa:comtop-soa-core:' + soaReleaseVersion
+	
+}
+
+javadoc{
+
+}

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Property>
+  <Review id="DEFAULT">
+    <Description>property.default.description</Description>
+    <ReviewLevel></ReviewLevel>
+    <ReviewLevelDesc></ReviewLevelDesc>
+    <Author></Author>
+    <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">1970-01-01 :: 00:00:00:000 GMT-10:00</CreationDate>
+    <Directory>review</Directory>
+    <Reviewers></Reviewers>
+    <Files/>
+    <FieldItems>
+      <FieldItem id="Type" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.type.label.codingStandards"/>
+        <Entry name="item.type.label.programLogic"/>
+        <Entry name="item.type.label.optimization"/>
+        <Entry name="item.type.label.usability"/>
+        <Entry name="item.type.label.clarity"/>
+        <Entry name="item.type.label.missing"/>
+        <Entry name="item.type.label.irrelevant"/>
+        <Entry name="item.type.label.suggestion"/>
+        <Entry name="item.type.label.other"/>
+      </FieldItem>
+      <FieldItem id="Severity" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.severity.label.critical"/>
+        <Entry name="item.severity.label.major"/>
+        <Entry name="item.severity.label.normal"/>
+        <Entry name="item.severity.label.minor"/>
+        <Entry name="item.severity.label.trivial"/>
+      </FieldItem>
+      <FieldItem id="Resolution" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.resolution.label.validNeedsfixing"/>
+        <Entry name="item.resolution.label.validFixlater"/>
+        <Entry name="item.resolution.label.validDuplicate"/>
+        <Entry name="item.resolution.label.validWontfix"/>
+        <Entry name="item.resolution.label.invalidWontfix"/>
+        <Entry name="item.resolution.label.unsureValidity"/>
+      </FieldItem>
+      <FieldItem id="Status" default="item.status.label.open">
+        <Entry name="item.status.label.open"/>
+        <Entry name="item.status.label.resolved"/>
+        <Entry name="item.status.label.closed"/>
+        <Entry name="item.status.label.reopened"/>
+      </FieldItem>
+    </FieldItems>
+    <Filters>
+      <Phase name="phase.individual" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.team" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="true"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.rework" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="true"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+    </Filters>
+  </Review>
+  <Review id="CIP运行时代码走查20150305">
+    <Description>CIP运行时代码走查</Description>
+    <ReviewLevel></ReviewLevel>
+    <ReviewLevelDesc></ReviewLevelDesc>
+    <Author>李忠文</Author>
+    <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2015-03-05 :: 14:33:27:752 CST</CreationDate>
+    <Directory>review</Directory>
+    <Reviewers>
+      <Entry id="李忠文" name="李忠文"/>
+      <Entry id="李晓芬" name="李晓芬"/>
+      <Entry id="沈康" name="沈康"/>
+      <Entry id="谢道衔" name="谢道衔"/>
+    </Reviewers>
+    <Files>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/action/BaseAction.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/action/WorkflowAction.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/appservice/BaseAppService.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/appservice/WorkflowAppService.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/appservice/WorkflowCoreService.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/dao/BaseDAO.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/dao/DatasourceHandler.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/dbconfig/WorkFlowMapper.xml"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/exception/BaseException.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/exception/MetaDataException.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/exception/WorkflowException.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/facade/BaseFacade.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/facade/WorkflowFacade.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/helper/SystemHelper.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/helper/WorkbenchHelper.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/helper/WorkflowCoreHelper.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/helper/WorkflowHelper.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/helper/WorkflowWorkbenchHelper.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/model/BaseConstant.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/model/BaseVO.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/model/WorkflowParam.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/model/WorkflowVO.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/WorkbenchConstant.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/base/WorkflowConstant.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/AppBeanUtil.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/AppContext.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/AppCore.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/AutoCompileUtil.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/CipCompileUtil.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/CIPContext.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/CIPServletListener.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/CIPWebApplication.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/core/DynamicClassLoader.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/exceptionhandler/aop/FacadeExceptionAdvice.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/exceptionhandler/aop/FacadeExceptionPointcut.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/exceptionhandler/aop/MetaDataFacadeExceptionAdvice.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/exceptionhandler/aop/MetaDataFacadeExceptionPointcut.java"/>
+      <Entry name="src/main/java/com/comtop/cip/runtime/exceptionhandler/scanner/ExceptionConfigScanner.java"/>
+    </Files>
+    <FieldItems>
+      <FieldItem id="Type" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.type.label.codingStandards"/>
+        <Entry name="item.type.label.programLogic"/>
+        <Entry name="item.type.label.optimization"/>
+        <Entry name="item.type.label.usability"/>
+        <Entry name="item.type.label.clarity"/>
+        <Entry name="item.type.label.missing"/>
+        <Entry name="item.type.label.irrelevant"/>
+        <Entry name="item.type.label.suggestion"/>
+        <Entry name="item.type.label.other"/>
+      </FieldItem>
+      <FieldItem id="Severity" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.severity.label.critical"/>
+        <Entry name="item.severity.label.major"/>
+        <Entry name="item.severity.label.normal"/>
+        <Entry name="item.severity.label.minor"/>
+        <Entry name="item.severity.label.trivial"/>
+      </FieldItem>
+      <FieldItem id="Resolution" default="item.label.unset">
+        <Entry name="item.label.unset"/>
+        <Entry name="item.resolution.label.validNeedsfixing"/>
+        <Entry name="item.resolution.label.validFixlater"/>
+        <Entry name="item.resolution.label.validDuplicate"/>
+        <Entry name="item.resolution.label.validWontfix"/>
+        <Entry name="item.resolution.label.invalidWontfix"/>
+        <Entry name="item.resolution.label.unsureValidity"/>
+      </FieldItem>
+      <FieldItem id="Status" default="item.status.label.open">
+        <Entry name="item.status.label.open"/>
+        <Entry name="item.status.label.resolved"/>
+        <Entry name="item.status.label.closed"/>
+        <Entry name="item.status.label.reopened"/>
+      </FieldItem>
+    </FieldItems>
+    <Filters>
+      <Phase name="phase.individual" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.team" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="" enabled="false"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="true"/>
+        <Filter name="Status" value="item.status.label.open" enabled="false"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+      <Phase name="phase.rework" enabled="true">
+        <Filter name="Interval" value="7" enabled="false"/>
+        <Filter name="Reviewer" value="" enabled="false"/>
+        <Filter name="Type" value="item.label.unset" enabled="false"/>
+        <Filter name="Severity" value="item.label.unset" enabled="false"/>
+        <Filter name="AssignedTo" value="item.reviewer.label.automatic" enabled="true"/>
+        <Filter name="Resolution" value="item.label.unset" enabled="false"/>
+        <Filter name="Status" value="item.status.label.open" enabled="true"/>
+        <Filter name="File" value="" enabled="false"/>
+      </Phase>
+    </Filters>
+  </Review>
+</Property>

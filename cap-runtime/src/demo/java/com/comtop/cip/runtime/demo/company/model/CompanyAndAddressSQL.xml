@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.comtop.cip.runtime.demo.company.model">
+	<select id="loadCompanyAndAddress_Company" parameterType="string" resultType="com.comtop.cip.runtime.demo.company.model.CompanyAndAddress">
+		SELECT * FROM Company where id = #{id}
+	</select>
+	<select id="loadCompanyAndAddress_Address" parameterType="string" resultType="com.comtop.cip.runtime.demo.company.model.CompanyAndAddress">
+		SELECT * FROM Address where id = #{id}
+	</select>
+	
+	<insert id="insertCompanyAndAddress_Company" parameterType="com.comtop.cip.runtime.demo.company.model.CompanyAndAddress">
+		insert into Company(id,name,no,active) values(#{id},#{name},#{no},#{active})
+	</insert>
+	<insert id="insertCompanyAndAddress_Address" parameterType="com.comtop.cip.runtime.demo.company.model.CompanyAndAddress">
+		insert into Address(id,detail) values(#{id},#{detail})
+	</insert>
+	
+	<update id="updateCompanyAndAddress_Company" parameterType="com.comtop.cip.runtime.demo.company.model.CompanyAndAddress">
+		update Company set name=#{name},no=#{no},active=#{active} where id=#{id}
+	</update>
+	<update id="updateCompanyAndAddress_Address" parameterType="com.comtop.cip.runtime.demo.company.model.CompanyAndAddress">
+		update Address set detail=#{detail} where id=#{id}
+	</update>
+	
+	<delete id="deleteCompanyAndAddress_Company" parameterType="string">
+		DELETE FROM Company where id = #{id}
+	</delete>
+	<delete id="deleteCompanyAndAddress_Address" parameterType="string">
+		DELETE FROM Address where id = #{id}
+	</delete>
+</mapper>
