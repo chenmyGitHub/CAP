@@ -1,0 +1,31 @@
+------------以下两段SQL，只有一个会执行成功----------------
+
+---1.重命名原来的表名
+ALTER TABLE CIP_BIZ_SEQUENCE RENAME TO CAP_RT_BIZ_SEQUENCE;
+
+----2.创建CAP_RU_BIZ_SEQUENCE 表  是自动生成编码控件需要使用到的表
+-- Create table
+create table CAP_RT_BIZ_SEQUENCE
+(
+  SEQ_ID   NVARCHAR2(32) not null,
+  SEQ_KEY  NVARCHAR2(200) not null,
+  SEQ_LAST NUMBER(6)
+);
+-- Add comments to the table 
+comment on table CAP_RT_BIZ_SEQUENCE
+  is '用于存放业务单据序号';
+-- Add comments to the columns 
+comment on column CAP_RT_BIZ_SEQUENCE.SEQ_ID
+  is 'ID';
+comment on column CAP_RT_BIZ_SEQUENCE.SEQ_KEY
+  is '业务单据关键字，一般建议使用页面相对路径';
+comment on column CAP_RT_BIZ_SEQUENCE.SEQ_LAST
+  is '最后的序号值';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table CAP_RT_BIZ_SEQUENCE
+  add constraint PK_BIZ_SEQUENCE primary key (SEQ_ID);
+-- Create/Recreate indexes 
+create index CAP_INX_SEQ_KEY on CAP_RT_BIZ_SEQUENCE (SEQ_KEY);
+
+
+

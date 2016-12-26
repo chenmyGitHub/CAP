@@ -1,0 +1,141 @@
+//设置allprojects
+allprojects {
+    apply plugin: 'java'
+	apply plugin:'eclipse-wtp'
+	
+	compileJava {
+	    options.incremental = true
+	    if (System.env.JAVA_HOME != null) {
+            options.bootClasspath = "$System.env.JAVA_HOME/jre/lib/rt.jar"
+        }
+	}
+	
+    def compatibilityVersion = 1.6
+    sourceCompatibility = compatibilityVersion
+    targetCompatibility = compatibilityVersion
+    
+	ext{
+	    TSTAMP = new Date().format('yyyyMMddHHmmss');
+	    deployPackageTime = new Date().format('yyyyMMdd');
+	    createTime = new Date().format('yyyy-MM-dd HH:mm:ss');
+	    gradleVersion="2.3";
+	    jdkVersion=System.getProperty("java.version"); 
+	    currentVersion = "3.1.0";
+		
+	    //运行时各组件发布版本
+		//TOP基本版本（TOP未打补丁jar都使用的TOP基本版本）
+	    topReleaseVersion = "20151210";
+		//TOP平台jar版本（版本号与TOP给定补丁包号一致）
+		topWorkbenchVersion = "5.1.293"				//comtop-top-workbench
+		topUserTrackVersion = "5.1.293"				//comtop-top-user-track
+		topUserOrgVersion = "5.1.297"				//comtop-top-user-org
+		topSmallAppVersion = "5.1.293"				//comtop-top-small-app
+		topTopPostVersion = "5.1.293"				//comtop-top-post
+		topModuleClassifyVersion = "5.1.293"		//comtop-top-module-classify
+		topMessageVersion = "5.1.201"				//comtop-top-message
+		topLoginVersion = "5.1.297"					//comtop-top-login
+		topGd4aVersion = "5.1.201"					//comtop-top-gd4a(4A系统对接jar暂时未使用)
+		topExternalServiceVersion = "5.1.201"		//comtop-top-external-service
+		topExtendAttrVersion = "5.1.201"			//comtop-top-extend-attr
+		topCoreVersion = "5.1.293"					//comtop-top-core
+		topComponentVersion = "5.1.293"				//comtop-top-component
+		topCommonVersion = "5.1.293"				//comtop-top-common
+		topCfgVersion = "5.1.293"					//comtop-top-cfg
+		topAccessVersion = "5.1.297"				//comtop-top-access
+		topOctVersion = "5.1.225"					//comtop-top-oct（top针对华侨城项目的jar）
+		
+		//bpms基本版本（bpms未打补丁jar都使用的bpms基本版本）
+	    bpmsReleaseVersion = "20151210";
+		//bpms平台jar版本（版本号与bpms给定补丁包号一致）
+		bpmsEngineCctaskVersion = "1.4.139";			//comtop-bpms-engine-cctask
+		bpmsEngineClientVersion = "1.4.139";		//comtop-bpms-engine-client
+		bpmsEngineCommonVersion = "1.4.139";		//comtop-bpms-engine-common
+		bpmsEngineServiceVersion = "1.4.139";		//comtop-bpms-engine-service
+		bpmsTbiImplVersion = "1.4.139";				//comtop-bpms-tbi-impl
+		bpmsEimMsgVersion = "1.4.117";				//comtop-util-eim-send-msg(企信整合工作流代办消息)
+		//bpmsIntergrationfassetsUtilVersion = "1.4.117";		//comtop-intergrationfassets-util(云南生成项目定制化jar)
+		
+	    eicCoreReleaseVersion = "20161128";
+	    eicViewReleaseVersion = "20161128";
+	    mcReleaseVersion = "20151210";
+		
+		//SOA版本
+	    soaReleaseVersion = "2.1.31";
+	    
+//	    atmReleaseVersion = "20150710";
+	} 
+    version = currentVersion
+	repositories {
+		//切换到CAP中心库
+		maven{
+            url "http://10.10.5.127:8081/nexus/content/repositories/CAP/"
+		}
+		maven{
+            url "http://10.10.5.127:8081/nexus/content/repositories/releases/"
+		}
+		//内部nexus服务器具有外网访问权限
+		maven{
+			url "http://10.10.50.24:8081/nexus/content/groups/public/"
+		}
+//		mavenLocal()
+//		mavenCentral()
+	}
+
+	ext.sharedManifest= manifest{
+	        attributes 'Built-company': 'szcomtop'
+         	attributes 'Implementation-Title':project.name
+	        attributes 'Implementation-Version':version
+	        attributes 'Gradle-Version':gradleVersion
+	        attributes 'Build-Jdk':compatibilityVersion
+			attributes 'Build-Version':version+'Build'+TSTAMP
+			attributes 'Build-Verdor':'技术研究中心'
+			attributes 'Created-Time':createTime
+        }
+	
+    jar {
+        baseName='comtop'
+        appendix=project.name.replaceAll('cip', 'cap')
+		archiveName=baseName + "-" + appendix + "." + extension
+        duplicatesStrategy=DuplicatesStrategy.FAIL
+        manifest = project.manifest{
+        	from sharedManifest
+        }
+    }
+
+	//task 将数据库SQL文件COPY到class下
+	task copySql(type:Copy){
+        from sourceSets.main.java.srcDirs
+        into sourceSets.main.output.classesDir
+        exclude '**/*.java'
+    } 
+    
+	//task依赖，生成classes时，把sqlCOPY过去 
+	classes.dependsOn copySql
+	tasks.withType(JavaCompile) { options.encoding = "UTF-8" } 
+	
+}
+
+
+subprojects{
+	eclipse{
+		project{
+			if(rootProject.hasProperty('eclipseAppendix')) {
+				name= project.name+"-" + rootProject.eclipseAppendix
+			}else {
+				name= project.name+"-" + currentVersion
+			}
+		}
+		
+		jdt {
+			file {
+				withProperties { properties ->
+					//读取cap目录下的org.eclipse.jdt.core.prefs文件用户eclipse jdt配置
+					//主要用于生成eclipse工程代码错误警告配置
+					new File("${rootProject.projectDir}/org.eclipse.jdt.core.prefs").withInputStream {
+						properties.load(it)
+					}
+				}
+			}
+		}
+	}
+}

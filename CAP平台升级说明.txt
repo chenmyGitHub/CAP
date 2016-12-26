@@ -1,0 +1,25 @@
+﻿说明：本文件用于记录CAP从旧版本升级到新版本（如CAP_V2.0.x升级到CAP_V2.1.x）的注意事项。
+
+########################################  CAP_V2.0 -> CAP_V2.1 ################################################################
+1、CAP_V2.1中删除了CIPContext.java、CIPServletListener.java，所以需要删掉web.xml以下配置：
+	<!-- CIP监听器 -->
+	<listener>
+		<listener-class>com.comtop.cip.runtime.core.CIPServletListener</listener-class>
+	</listener>
+2.CAP_V2.1中将CIPWebApplication中关于热加载的代码重构出来。
+因此在web.xml中有两处需要调整
+1）com.comtop.cip.runtime.core.CIPWebApplication替换为com.comtop.top.component.common.systeminit.WebApplication
+
+2）添加过滤器
+<filter>
+		<filter-name>capBmReloadFilter</filter-name>
+		<filter-class>
+			com.comtop.cip.webapp.core.CapBmReloadFilter
+		</filter-class>
+	</filter>
+
+3.对自动生成编码控件autogennumber.component.xml依赖的后台代码AutoGenNumberAction等进行了重构，
+原来AutoGenNumberAction等代码是放在cap-view工程下，重构后将代码放到cap-runtime工程下。
+   原来自动生成编码使用的数据库表CIP_BIZ_SEQUENCE 重命名为 CAP_RT_BIZ_SEQUENCE
+
+  2.0升级 2.1时，还需要执行数据库调整脚本《2.0升级2.1-自动生成编码数据库调整脚本》
