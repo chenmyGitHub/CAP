@@ -1,0 +1,8 @@
+//archivesBaseName ='comtop-cap-cip-codegen'
+dependencies {
+	
+}
+
+javadoc{
+
+}
